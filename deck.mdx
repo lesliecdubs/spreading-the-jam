@@ -1,8 +1,28 @@
-export { default as theme } from 'mdx-deck/themes'
+import { Head } from 'mdx-deck'
+import { syntaxHighlighterPrism } from "mdx-deck/themes";
+import customTheme from "./theme";
 
-# Spreading the JAM: Getting started with the JAMstack using Gatsby and Netlify Forms
-by Leslie Cohn-Wein
+export const themes = [syntaxHighlighterPrism, customTheme];
+
+<Head>
+  <title>Spreading the JAM: Getting started with the JAMstack</title>
+  <meta itemProp="name" content="Spreading the JAM: Getting started with the JAMstack" />
+  <meta itemProp="description" content="The JAMstack is revolutionizing the way we think about our workflow by providing a simpler developer experience, better performance, lower cost, and greater scalability." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@lesliecdubs" />
+  <meta name="twitter:title" content="Spreading the JAM: Getting started with the JAMstack" />
+  <meta name="twitter:description" content="The JAMstack is revolutionizing the way we think about our workflow by providing a simpler developer experience, better performance, lower cost, and greater scalability." />
+  <meta property="og:title" content="Spreading the JAM: Getting started with the JAMstack" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://spread-the-jam.netlify.com/" />
+  <meta property="og:description" content="The JAMstack is revolutionizing the way we think about our workflow by providing a simpler developer experience, better performance, lower cost, and greater scalability." />
+  <meta property="og:site_name" content="Spreading the JAM: Getting started with the JAMstack" />
+</Head>
+
+# Spreading the JAM
+
+Getting started with the JAMstack<br /> using Gatsby and Netlify Forms
+
 ---
-# About Me
----
-The end 
+
+The end

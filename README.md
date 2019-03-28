@@ -44,7 +44,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Who Am I?
 
-**(Leslie Cohn-Wein)[https://twitter.com/lesliecdubs]** is a front end engineer at Netlify who works remotely from North Dallas.
+**[Leslie Cohn-Wein](https://twitter.com/lesliecdubs)** is a front end engineer at Netlify who works remotely from North Dallas.
 
 In her past life, she lived and worked at digital agencies in NYC, developing sites for clients like Nintendo and Comedians in Cars Getting Coffee.
 

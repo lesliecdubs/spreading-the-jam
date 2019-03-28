@@ -1,0 +1,15 @@
+{
+  "name": "spreading-the-jam",
+  "private": true,
+  "version": "1.0.0",
+  "description": "The JAMstack is revolutionizing the way we think about our workflow by providing a simpler developer experience, better performance, lower cost, and greater scalability. Learn more about this front end-focused approach to building sites and apps, and get a hands-on demo where we will set up a Gatsby site with a contact form, deploy the site to Netlify, and set up Netlify Forms to capture and manage form entries (all without a web server!).",
+  "author": "Leslie Cohn-Wein",
+  "license": "MIT",
+  "scripts": {
+    "start": "mdx-deck deck.mdx",
+    "build": "mdx - deck build deck.mdx"
+  },
+  "dependencies": {
+    "mdx-deck": "^2.0.5"
+  }
+}

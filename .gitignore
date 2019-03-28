@@ -1,3 +1,10 @@
-dist/
-dist-www/
 node_modules/
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.log
+package-lock.json
+dist

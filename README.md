@@ -15,10 +15,6 @@ This presentation is built with [mdx-deck](https://github.com/jxnblk/mdx-deck), 
 - perform with presenter mode
 - add speaker notes
 
-### Prerequisites
-
-Want to use or iterate on these slides? Here's how.
-
 ### Installing
 
 Install dependencies:
@@ -39,8 +35,8 @@ This presentation is hosted on [Netlify](https://www.netlify.com) with continuou
 
 ## Built With
 
-- [mdx-deck](https://github.com/jxnblk/mdx-deck) - Markdown-friendly slide deck framework
-- [Netlify](https://maven.apache.org/) - Deploy & manage the presentation online
+- [mdx-deck](https://github.com/jxnblk/mdx-deck) - Slide deck framework
+- [Netlify](https://www.netlify.com) - Deploy online
 
 <!-- ## Contributing
 
@@ -48,7 +44,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Who Am I?
 
-**Leslie Cohn-Wein** is a front end engineer at Netlify who works remotely from North Dallas.
+**(Leslie Cohn-Wein)[https://twitter.com/lesliecdubs]** is a front end engineer at Netlify who works remotely from North Dallas.
 
 In her past life, she lived and worked at digital agencies in NYC, developing sites for clients like Nintendo and Comedians in Cars Getting Coffee.
 

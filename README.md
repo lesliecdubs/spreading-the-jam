@@ -1,5 +1,7 @@
 # Presentation: Spread the JAM
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5932f3fc-4c0a-4ec0-a80e-d347a85334d1/deploy-status)](https://app.netlify.com/sites/spread-the-jam/deploys)
+
 The JAMstack is revolutionizing the way we think about our workflow by providing a simpler developer experience, better performance, lower cost, and greater scalability. Learn more about this front end-focused approach to building sites and apps, and get a hands-on demo where we will:
 
 - set up a Gatsby site with a contact form
@@ -17,17 +19,11 @@ This presentation is built with [mdx-deck](https://github.com/jxnblk/mdx-deck), 
 
 ### Installing
 
-Install dependencies:
+Install dependencies: `yarn install`
 
-```
-yarn install
-```
+Start the dev server: `yarn start`
 
-Start the dev server:
-
-```
-yarn start
-```
+Build the slides: `yarn build`
 
 ## Deployment
 

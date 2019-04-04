@@ -1,5 +1,5 @@
 export { default as theme } from "./src";
-import { Head } from "mdx-deck";
+import { Appear, Head, Notes } from "mdx-deck";
 import { LayoutGradientBg, Layout } from "./src";
 
 <Head>
@@ -43,6 +43,142 @@ export default LayoutGradientBg;
 # Spreading the JAM
 
 Getting started with the JAMstack<br /> using Gatsby and Netlify Forms
+
+<Notes>
+  <p>Lots of buzzwords!</p>
+  <p>JAMstack, Gatsby, Netlify... let's break it down.</p>
+  <p>But first, a little about me...</p>
+</Notes>
+
+---
+
+export default LayoutGradientBg;
+
+# Leslie Cohn-Wein
+
+<small>
+  <em>Pronounced CONE🍦-wine🍷</em>
+</small>
+
+<p>Austin ➡️ Denver ➡️ Australia ➡️ NYC ➡️ Dallas</p>
+<p>💙 Accessibility + CSS + SVG + React + Remote Work 💙</p>
+<p>@lesliecdubs</p>
+
+<Notes>
+  <p>Born in Austin -> college in Denver -> 6 months in Aus</p>
+  <p>NYC for 6 years, first dev job at an ad agency</p>
+  <p>That's where I first started building with the JAMstack</p>
+  <p>Moved to Dallas 2.5 years ago, working remote</p>
+  <p>Hired as a front end engineer at Netlify 6 months ago</p>
+  <p>
+    I primarily work on app.netlify.com - which is a React front end - building
+    new features and squashing bugs
+  </p>
+  <p>Follow me on Twitter + GitHub</p>
+</Notes>
+
+---
+
+export default Layout;
+
+<Appear>
+  <h1>Javascript</h1>
+  <h1>APIs</h1>
+  <h1>Markup</h1>
+  <img src="https://media.giphy.com/media/tyttpH8Ksf1WB0xouRy/giphy.gif" />
+</Appear>
+
+<Notes>
+  <p>Built on the idea of a decoupled or headless approach</p>
+  <p>"Separation of concerns" for front + back end</p>
+  <p>Front end will live in its own repository and connect to back end via APIs</p>
+  <p>Stop spending time configuring and building a new back end for every project</p>
+  <p>Leverage microservices + serverless functions to build web apps</p>
+  <p>Chris Coyier: "The all-powerful front end developer"</p>
+  <p>Syntax fm: "BYOF - bring your own front end"</p>
+</Notes>
+
+---
+
+# Why JAMstack
+
+- Better performance
+- Cheaper, easier scaling
+- Higher security
+- Better developer experience
+- Gives superpowers to front end developers ("full stack front end")
+
+---
+
+# What the JAMstack isn't
+
+- A site built with a server-side CMS using a built-in theme
+  - Wordpress, Drupal, Joomla, Squarespace...
+  - (unless you have access to REST API to bring in content to a decoupled front end)
+- A single page app that uses isomorphic rendering to build views on the server at runtime
+- A monolithic server-run web app that relies on Ruby, Node, or another backend languages
+
+---
+
+# JAMstack ecosystem
+
+<Appear>
+  - "Static" site generator (your code)
+    - Jekyll, Next, Hugo, Gatsby, React Static, Vuepress, Middleman...
+    - staticgen.com
+  - Headless CMS or Markdown or Databases (your content)
+    - Open source: Strapi, Netlify CMS, Ghost, WordPress...
+    - Commercial: Sanity, Scrivito, Contentful, Cosmic JS, DatoCMS, Forestry...
+    - headlesscms.org 
+</Appear>
+
+---
+
+# JAMstack best practices
+
+<Appear>
+  - Modern build tools
+  - Continuous deployment from git
+  - Atomic deploys 
+  - One-click rollback
+  - Instant cache invalidation
+</Appear>
+
+---
+
+# So... what does this have to do with React?
+
+- Remember "modern build tools"?
+- BYOF: Write your app in React Static, Gatsby, etc
+- The SSG will transform it into a directory with a single hTML file and static assets
+- The folder is served from your hosting provider as a "static site"
+- but with all the reactivity we get from React
+
+---
+
+# Building forms on the JAMstack
+
+- A traditional form would require a server to store entries in a database 
+- But the JAMstack offers a better way
+
+---
+
+# All about Netlify
+
+- Static web hosting
+- Continuous deployment from GitHub, GitLab & Bitbucket
+- Automatic HTTPS
+- Custom domains
+- One-click rollbacks
+- Deploy previews for every commit and/or branch (you choose!)
+- Add-ons: Functions, Identity, Large Media, and...
+- Forms!!!
+
+---
+
+# Let's get coding
+
+- Gatsby example
 
 ---
 

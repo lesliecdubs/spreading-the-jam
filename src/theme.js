@@ -1,16 +1,3 @@
-// export default {
-//   // add a custom font
-//   font: "Roboto, sans-serif",
-//   // custom colors
-//   Slide: {
-//     background: "linear-gradient(#4EB3A7, #468DAD)"
-//   },
-//   colors: {
-//     text: "white"
-//     // background: "linear-gradient(#e66465, #9198e5)"
-//   }
-// };
-// example theme.js
 import theme from "mdx-deck/themes";
 import atomDark from "react-syntax-highlighter/styles/prism/atom-dark";
 
@@ -22,7 +9,8 @@ export default {
     style: atomDark
   },
   img: {
-    maxWidth: "100%"
+    maxWidth: "100%",
+    marginBottom: "80px"
   },
   ul: {
     listStyle: "none",

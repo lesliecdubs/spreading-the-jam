@@ -2,34 +2,71 @@ import React, { Fragment } from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.main`
+  background: white;
   align-items: center;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   height: 100vh;
   justify-content: center;
   position: relative;
   width: 100vw;
+
+  > * {
+    color: black;
+  }
 `;
 
 const Footer = styled.footer`
-  border-top: 1px solid #dc5f53;
-  color: white;
+  align-items: center;
   display: flex;
-  font-size: 14px;
+  font-size: 18px;
   justify-content: space-between;
   padding: 30px 100px;
   text-align: right;
   width: 100vw;
 `;
 
-const Layout = ({ children }) => (
-  <Fragment>
-    <Wrapper>{children}</Wrapper>
-    <Footer>
-      <span>Netlify</span>
-      <span>@lesliecdubs</span>
-    </Footer>
-  </Fragment>
-);
+const TextLink = styled.a`
+  color: black;
+  opacity: 0.8;
+  text-decoration: none;
+
+  span {
+    position: relative;
+
+    &::after {
+      background-color: black;
+      bottom: -1px;
+      content: "";
+      height: 1px;
+      position: absolute;
+      right: 0;
+      width: 91px;
+      transition: all 0.15s;
+    }
+  }
+
+  &:hover {
+    span::after {
+      transform: scaleX(0);
+    }
+  }
+`;
+
+const Layout = props => {
+  return (
+    <Fragment>
+      <Wrapper>{props.children}</Wrapper>
+      <Footer>
+        <a href="https://netlify.com" target="_blank">
+          <img src="https://cdn.netlify.com/15ecf59b59c9d04b88097c6b5d2c7e8a7d1302d0/1b6d6/img/press/logos/full-logo-light.svg" />
+        </a>
+        <TextLink href="https://twitter.com/lesliecdubs" target="_blank">
+          <span>@lesliecdubs</span>
+        </TextLink>
+      </Footer>
+    </Fragment>
+  );
+};
 
 export default Layout;

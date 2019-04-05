@@ -34,9 +34,15 @@ This presentation is hosted on [Netlify](https://www.netlify.com) with continuou
 - [mdx-deck](https://github.com/jxnblk/mdx-deck) - Slide deck framework
 - [Netlify](https://www.netlify.com) - Deploy online
 
-<!-- ## Contributing
+## Useful Links
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us. -->
+### For the demo in this presentation:
+- [Test GitHub repository](https://github.com/lesliecdubs/netlify-gatsby-form-example)
+- [Live test site](https://netlify-gatsby-form-example.netlify.com/)
+
+### Netlify Forms documentation:
+- [Netlify Blog: Form handling with static site generators](https://www.netlify.com/blog/2017/07/20/how-to-integrate-netlifys-form-handling-in-a-react-app/#form-handling-with-static-site-generators)
+- [Netlify Example: Gatsby site with forms](https://github.com/imorente/gatsby-netlify-form-example)
 
 ## Who Am I?
 

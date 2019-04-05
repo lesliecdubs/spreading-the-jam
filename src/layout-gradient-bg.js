@@ -10,6 +10,30 @@ const Wrapper = styled.main`
   justify-content: center;
   position: relative;
   width: 100vw;
+
+  ol {
+    text-align: left;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    font-size: 38px;
+    margin: 25px 0;
+    font-family: Roboto, sans-serif;
+  }
+
+  a {
+    color: white;
+  }
+
+  .dark {
+    color: black;
+  }
 `;
 
 const Footer = styled.footer`

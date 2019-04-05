@@ -1,6 +1,8 @@
-export { default as theme } from "./src";
-import { Appear, Head, Notes } from "mdx-deck";
-import { LayoutGradientBg, Layout } from "./src";
+export { default as theme } from "./src"
+import { Appear, Head, Notes, Image } from "mdx-deck"
+import { LayoutGradientBg, Layout } from "./src"
+import { CodeSurfer } from 'mdx-deck-code-surfer'
+import nightOwl from 'prism-react-renderer/themes/nightOwl'
 
 <Head>
   <title>Spreading the JAM: Getting started with the JAMstack</title>
@@ -11,30 +13,6 @@ import { LayoutGradientBg, Layout } from "./src";
   <meta
     itemProp="description"
     content="The JAMstack is revolutionizing the way we think about our workflow by providing a simpler developer experience, better performance, lower cost, and greater scalability."
-  />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@lesliecdubs" />
-  <meta
-    name="twitter:title"
-    content="Spreading the JAM: Getting started with the JAMstack"
-  />
-  <meta
-    name="twitter:description"
-    content="The JAMstack is revolutionizing the way we think about our workflow by providing a simpler developer experience, better performance, lower cost, and greater scalability."
-  />
-  <meta
-    property="og:title"
-    content="Spreading the JAM: Getting started with the JAMstack"
-  />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://spread-the-jam.netlify.com/" />
-  <meta
-    property="og:description"
-    content="The JAMstack is revolutionizing the way we think about our workflow by providing a simpler developer experience, better performance, lower cost, and greater scalability."
-  />
-  <meta
-    property="og:site_name"
-    content="Spreading the JAM: Getting started with the JAMstack"
   />
 </Head>
 
@@ -60,19 +38,25 @@ export default LayoutGradientBg;
   <em>Pronounced CONE🍦-wine🍷</em>
 </small>
 
-<p>Austin ➡️ Denver ➡️ Australia ➡️ NYC ➡️ Dallas</p>
-<p>💙 Accessibility + CSS + SVG + React + Remote Work 💙</p>
-<p>@lesliecdubs</p>
+Austin ➡️ Denver ➡️ Australia ➡️ NYC ➡️ Dallas
+
+💙 Accessibility + CSS + SVG + React + Remote Work 💙
+
+Front end engineer at Netlify
+
+Get some stickers!!
+
+@lesliecdubs
 
 <Notes>
-  <p>Born in Austin -> college in Denver -> 6 months in Aus</p>
-  <p>NYC for 6 years, first dev job at an ad agency</p>
-  <p>That's where I first started building with the JAMstack</p>
-  <p>Moved to Dallas 2.5 years ago, working remote</p>
+  <p>Agency life: Nintendo, Seinfeld, WorldPride, etc</p>
+  <p>Where I first started building with the JAMstack</p>
+  <hr />
+  <p>Moved to Dallas 2.5 years ago</p>
   <p>Hired as a front end engineer at Netlify 6 months ago</p>
   <p>
-    I primarily work on app.netlify.com - which is a React front end - building
-    new features and squashing bugs
+    Work primarily on app.netlify.com (React front end!) on new features and bug
+    fixes
   </p>
   <p>Follow me on Twitter + GitHub</p>
 </Notes>
@@ -81,107 +65,319 @@ export default LayoutGradientBg;
 
 export default Layout;
 
-<Appear>
-  <h1>Javascript</h1>
-  <h1>APIs</h1>
-  <h1>Markup</h1>
-  <img src="https://media.giphy.com/media/tyttpH8Ksf1WB0xouRy/giphy.gif" />
-</Appear>
+# <span className="highlight">JAM</span>stack
+
+<ul>
+  <Appear>
+    <li>Javascript</li>
+    <li>APIs</li>
+    <li>Markup</li>
+    <img className="image" src="https://media.giphy.com/media/tyttpH8Ksf1WB0xouRy/giphy.gif" />
+  </Appear>
+</ul>
 
 <Notes>
-  <p>Built on the idea of a decoupled or headless approach</p>
+  <h2>Decoupled web</h2>
+  <p><strong>Javascript:</strong> browser-side functionality (often using a framework like React or Angular)</p>
+  <p><strong>API:</strong> back ends on the server that don't serve back HTML but exchange data with you (typically JSON)</p>
+  <p><strong>Markup:</strong> content / HTML</p>
+  <hr />
+  <p>JAMstack === decoupled or headless approach</p>
   <p>"Separation of concerns" for front + back end</p>
-  <p>Front end will live in its own repository and connect to back end via APIs</p>
-  <p>Stop spending time configuring and building a new back end for every project</p>
-  <p>Leverage microservices + serverless functions to build web apps</p>
+  <p>Front end has its own repo (JS + Markup), connects to back end via APIs</p>
+  <p>
+    Leverage microservices + serverless functions to build more complex +
+    dynamic web apps
+  </p>
+  <hr />
+  <h2>How others explain it</h2>
   <p>Chris Coyier: "The all-powerful front end developer"</p>
   <p>Syntax fm: "BYOF - bring your own front end"</p>
 </Notes>
 
 ---
 
-# Why JAMstack
-
-- Better performance
-- Cheaper, easier scaling
-- Higher security
-- Better developer experience
-- Gives superpowers to front end developers ("full stack front end")
-
----
-
-# What the JAMstack isn't
-
-- A site built with a server-side CMS using a built-in theme
-  - Wordpress, Drupal, Joomla, Squarespace...
-  - (unless you have access to REST API to bring in content to a decoupled front end)
-- A single page app that uses isomorphic rendering to build views on the server at runtime
-- A monolithic server-run web app that relies on Ruby, Node, or another backend languages
-
----
-
-# JAMstack ecosystem
-
-<Appear>
-  - "Static" site generator (your code)
-    - Jekyll, Next, Hugo, Gatsby, React Static, Vuepress, Middleman...
-    - staticgen.com
-  - Headless CMS or Markdown or Databases (your content)
-    - Open source: Strapi, Netlify CMS, Ghost, WordPress...
-    - Commercial: Sanity, Scrivito, Contentful, Cosmic JS, DatoCMS, Forestry...
-    - headlesscms.org 
-</Appear>
-
----
-
-# JAMstack best practices
-
-<Appear>
-  - Modern build tools
-  - Continuous deployment from git
-  - Atomic deploys 
-  - One-click rollback
-  - Instant cache invalidation
-</Appear>
-
----
-
-# So... what does this have to do with React?
-
-- Remember "modern build tools"?
-- BYOF: Write your app in React Static, Gatsby, etc
-- The SSG will transform it into a directory with a single hTML file and static assets
-- The folder is served from your hosting provider as a "static site"
-- but with all the reactivity we get from React
-
----
-
-# Building forms on the JAMstack
-
-- A traditional form would require a server to store entries in a database 
-- But the JAMstack offers a better way
-
----
-
-# All about Netlify
-
-- Static web hosting
-- Continuous deployment from GitHub, GitLab & Bitbucket
-- Automatic HTTPS
-- Custom domains
-- One-click rollbacks
-- Deploy previews for every commit and/or branch (you choose!)
-- Add-ons: Functions, Identity, Large Media, and...
-- Forms!!!
-
----
-
-# Let's get coding
-
-- Gatsby example
+<Image src="https://snipcart.com/media/204006/jamstack-vs-wordpress-1.png" size="75% auto" />
 
 ---
 
 export default Layout;
 
-The end
+# Why <span className="highlight">JAM</span>stack?
+
+<ul>
+  <Appear>
+    <li>⚡️ Blazing fast performance</li>
+    <li>🤑 Cheaper + easier scaling</li>
+    <li>🚨 Fewer security risks</li>
+    <li>👩🏻‍💻 Better developer experience</li>
+    <li>✨ Give front end developers superpowers</li>
+  </Appear>
+</ul>
+
+<Notes>
+  <p><strong>Perf:</strong> Serve pre-built markup and assets over a CDN</p>
+  <p><strong>Scalability:</strong> Cheaper to host. No server maintenance + sites can scale without worry (CDN compensates for more visitors).</p>
+  <p><strong>Security:</strong> No need to worry about server or db vulnerabilities</p>
+  <p><strong>DX:</strong> Front end focused, allows quicker dev with modern tools</p>
+  <p><strong>Front end:</strong> Build full-stack apps with only JS knowledge + leverage existing microservices for deeper functionality</p>
+</Notes>
+
+---
+
+export default Layout;
+
+# What the <span className="highlight">JAM</span>stack _isn’t_
+
+Any project that relies on a tight coupling between client and server:
+
+<ul>
+  <Appear>
+    <li>A site built with a server-side CMS using a built-in theme</li>
+    <img className="logo" src={require("file-loader!./images/logo-wordpress.png")} />
+    <img className="logo" src={require("file-loader!./images/logo-drupal.png")} />
+    <img className="logo" src={require("file-loader!./images/logo-joomla.jpg")} />
+    <img className="logo" src={require("file-loader!./images/logo-squarespace.png")} />
+    <li>A single page app that uses isomorphic rendering to build views on the server at runtime</li>
+    <li>A monolithic server-run web app that relies on Ruby, Node, or another backend languages</li>
+  </Appear>
+</ul>
+
+<Notes>
+  <p>It's not WordPress, Drupal, Joomla, or Squarespace</p>
+  <p>(unless you are using a REST API to bring content stored there into a decoupled front end)</p>
+</Notes>
+
+---
+
+export default Layout;
+
+# <span className="highlight">JAM</span>stack ecosystem
+
+<Appear>
+  <h2>“Static site” generator</h2>
+  <p>Jekyll, Next, Hugo, Gatsby, React Static, Vuepress, Middleman...</p>
+  <p><a href="http://staticgen.com" target="_blank">staticgen.com</a></p>
+  <h2>Headless CMS</h2>
+  <p><strong>Open source:</strong> Netlify CMS, Strapi, Ghost, WordPress...</p>
+  <p><strong>Commercial:</strong> Sanity, Scrivito, Contentful, Cosmic JS, DatoCMS, Forestry...</p>
+  <a href="http://headlesscms.org" target="_blank">headlesscms.org</a>
+</Appear>
+
+
+---
+
+<Image src="https://cdn-images-1.medium.com/max/1280/1*TdRFV0LAG7TG3US2YJMALA.jpeg" size="90% auto" />
+
+---
+
+export default Layout;
+
+# <span className="highlight">JAM</span>stack best practices
+
+<ul>
+  <Appear>
+    <li>🛠 Modern build tools</li>
+    <li>✅ Continuous deployment from git</li>
+    <li>⚙️ Atomic deploys</li>
+    <li>🧠 Instant cache invalidation</li>
+  </Appear>
+</ul>
+
+---
+
+export default LayoutGradientBg;
+
+# Real world <span className="dark">JAM</span>stack
+
+Portfolio site with a contact form
+<ul>
+  <li>Static site generator: <strong><a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a></strong></li>
+  <li>Headless CMS: <strong>none</strong></li>
+  <li>Version control: <strong>GitHub</strong></li>
+  <li>Host: <strong>Netlify</strong></li>
+</ul>
+
+<Notes>
+  <p>A traditional form would require a server to store entries in a database</p>
+  <p>But the JAMstack offers a better and easier way</p>
+  <p>Let's start by installing the Gatsby CLI tools and set up a new Gatsby site</p>
+</Notes>
+
+---
+
+<CodeSurfer
+  theme={nightOwl}
+  code={`
+// install Gatsby CLI globally if you don't already have it
+npm install -g gatsby-cli
+\n
+// create a new site using forty starter called portfolio
+gatsby new portfolio https://github.com/codebushi/gatsby-starter-forty
+\n
+// change directories into new site
+cd portfolio
+\n
+// start dev server
+gatsby develop
+`}
+/>
+
+<Notes>
+  <p>Once our Gatsby site is set up, we want to hook it up to a GitHub repo</p>
+  <p>Allows for continous deployment -> meaning when we push our code, the site will automatically build and deploy</p>
+</Notes>
+
+---
+
+<CodeSurfer
+  theme={nightOwl}
+  code={`
+// initialize this directory as a git repo
+git init
+\n
+// add the files in the local repository and stage them for commit
+git add .
+\n
+// commits the tracked changes
+git commit -m "First commit"
+\n
+// grab your GitHub repo URL
+git remote add origin remote REPOSITORY-URL-GOES-HERE
+\n
+// verify new remote URL
+git remote -v
+\n
+// push the master branch to your new origin repo
+git push -u origin master
+`}
+/>
+
+<Notes>
+  <p>Now we have a Gatsby site using the Forty starter</p>
+  <p>That site is hooked up to a new GitHub repo</p>
+  <p>The last step is to deploy (or host) this site on the web so we can set up and test our form</p>
+</Notes>
+
+---
+
+export default LayoutGradientBg;
+
+# Deploy your site
+
+<ol>
+  <li>Sign up or sign in: <a href="https://app.netlify.com/signup" target="_blank">https://app.netlify.com/signup</a></li>
+  <li>Click "New site from Git"</li>
+  <li>Connect to GitHub</li>
+  <li>Select your repo</li>
+  <li>Set your site + build settings</li>
+  <li>Deploy your site!</li>
+</ol>
+
+---
+
+export default LayoutGradientBg;
+
+# Set up your form
+
+<ol>
+  <li>Open `Contact.js` in your editor</li>
+  <li>Find your form</li>
+  <li>Add a name attribute to your form: `name="contact"`</li>
+  <li>Hook it up to Netlify: `data-netlify="true"`</li>
+  <li>To help avoid spam, add: `data-netlify-honeypot="bot-field"`</li>
+  <li>Add a honeypot field: `<input type="hidden" name="form-name" value="contact" />`</li>
+  <li>Commit and push</li>
+</ol>
+
+---
+
+<CodeSurfer
+  theme={nightOwl}
+  code={`
+<form method="post">
+  <div className="field half first">
+    <label htmlFor="name">Name</label>
+    <input type="text" name="name" id="name" />
+  </div>
+  ...
+</form>
+`}
+/>
+
+---
+
+<CodeSurfer
+  theme={nightOwl}
+  code={`
+<form method="post" name="contact">
+  <div className="field half first">
+    <label htmlFor="name">Name</label>
+    <input type="text" name="name" id="name" />
+  </div>
+  ...
+</form>
+`}
+/>
+
+---
+
+<CodeSurfer
+  theme={nightOwl}
+  code={`
+<form method="post" name="contact" data-netlify="true">
+  <div className="field half first">
+    <label htmlFor="name">Name</label>
+    <input type="text" name="name" id="name" />
+  </div>
+  ...
+</form>
+`}
+/>
+
+---
+
+<CodeSurfer
+  theme={nightOwl}
+  code={`
+<form method="post" name="contact" data-netlify="true" 
+data-netlify-honeypot="bot-field">
+  <div className="field half first">
+    <label htmlFor="name">Name</label>
+    <input type="text" name="name" id="name" />
+  </div>
+  ...
+</form>
+`}
+/>
+
+---
+
+<CodeSurfer
+  theme={nightOwl}
+  code={`
+<form method="post" name="contact" data-netlify="true" 
+data-netlify-honeypot="bot-field">
+  <input type="hidden" name="form-name" value="contact" />
+  <div className="field half first">
+    <label htmlFor="name">Name</label>
+    <input type="text" name="name" id="name" />
+  </div>
+  ...
+</form>
+`}
+/>
+
+---
+
+export default Layout;
+
+# Manage + notify
+
+Submit an entry:<br/>
+<a href="https://netlify-gatsby-form-example.netlify.com/" target="_blank">https://netlify-gatsby-form-example.netlify.com/</a>
+
+<ul>
+  <li>Visit the Forms dashboard to check entries</li>
+  <li>Set up a <a href="https://zapier.com/app/editor/55819025/nodes/55819025/action" target="_blank">Zapier integration</a> to receive form entry notifications</li>
+</ul>

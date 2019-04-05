@@ -11,8 +11,55 @@ const Wrapper = styled.main`
   position: relative;
   width: 100vw;
 
-  > * {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  li {
     color: black;
+  }
+
+  ul,
+  ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    font-size: 38px;
+    margin: 25px 0;
+    font-family: Roboto, sans-serif;
+  }
+
+  small {
+    font-size: 18px;
+    font-style: italic;
+  }
+
+  a {
+    color: #00c2b2;
+  }
+
+  hr {
+    margin: 50px 0 30px;
+  }
+
+  .image {
+    margin-top: 40px;
+  }
+
+  .highlight {
+    color: #00c2b2;
+  }
+
+  .logo {
+    height: 100px;
+    width: auto;
+    margin: 0 20px;
   }
 `;
 

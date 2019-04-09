@@ -1,8 +1,8 @@
-export { default as theme } from "./src"
-import { Appear, Head, Notes, Image } from "mdx-deck"
-import { LayoutGradientBg, Layout } from "./src"
-import { CodeSurfer } from 'mdx-deck-code-surfer'
-import nightOwl from 'prism-react-renderer/themes/nightOwl'
+export { default as theme } from "./src";
+import { Appear, Head, Notes, Image } from "mdx-deck";
+import { LayoutGradientBg, Layout } from "./src";
+import { CodeSurfer } from "mdx-deck-code-surfer";
+import nightOwl from "prism-react-renderer/themes/nightOwl";
 
 <Head>
   <title>Spreading the JAM: Getting started with the JAMstack</title>
@@ -14,7 +14,11 @@ import nightOwl from 'prism-react-renderer/themes/nightOwl'
     itemProp="description"
     content="The JAMstack is revolutionizing the way we think about our workflow by providing a simpler developer experience, better performance, lower cost, and greater scalability."
   />
-  <link rel="shortcut icon" type="image/png" href="https://www.netlify.com/img/global/favicon/favicon-32x32.png" />
+  <link
+    rel="shortcut icon"
+    type="image/png"
+    href="https://www.netlify.com/img/global/favicon/favicon-32x32.png"
+  />
 </Head>
 
 export default LayoutGradientBg;
@@ -73,15 +77,26 @@ export default Layout;
     <li>Javascript</li>
     <li>APIs</li>
     <li>Markup</li>
-    <img className="image" src="https://media.giphy.com/media/tyttpH8Ksf1WB0xouRy/giphy.gif" />
+    <img
+      className="image"
+      src="https://media.giphy.com/media/tyttpH8Ksf1WB0xouRy/giphy.gif"
+    />
   </Appear>
 </ul>
 
 <Notes>
   <h2>Decoupled web</h2>
-  <p><strong>Javascript:</strong> browser-side functionality (often using a framework like React or Angular)</p>
-  <p><strong>API:</strong> back ends on the server that don't serve back HTML but exchange data with you (typically JSON)</p>
-  <p><strong>Markup:</strong> content / HTML</p>
+  <p>
+    <strong>Javascript:</strong> browser-side functionality (often using a
+    framework like React or Angular)
+  </p>
+  <p>
+    <strong>API:</strong> back ends on the server that don't serve back HTML but
+    exchange data with you (typically JSON)
+  </p>
+  <p>
+    <strong>Markup:</strong> content / HTML
+  </p>
   <hr />
   <p>JAMstack === decoupled or headless approach</p>
   <p>"Separation of concerns" for front + back end</p>
@@ -98,7 +113,10 @@ export default Layout;
 
 ---
 
-<Image src="https://snipcart.com/media/204006/jamstack-vs-wordpress-1.png" size="75% auto" />
+<Image
+  src="https://snipcart.com/media/204006/jamstack-vs-wordpress-1.png"
+  size="75% auto"
+/>
 
 ---
 
@@ -117,11 +135,24 @@ export default Layout;
 </ul>
 
 <Notes>
-  <p><strong>Perf:</strong> Serve pre-built markup and assets over a CDN</p>
-  <p><strong>Scalability:</strong> Cheaper to host. No server maintenance + sites can scale without worry (CDN compensates for more visitors).</p>
-  <p><strong>Security:</strong> No need to worry about server or db vulnerabilities</p>
-  <p><strong>DX:</strong> Front end focused, allows quicker dev with modern tools</p>
-  <p><strong>Front end:</strong> Build full-stack apps with only JS knowledge + leverage existing microservices for deeper functionality</p>
+  <p>
+    <strong>Perf:</strong> Serve pre-built markup and assets over a CDN
+  </p>
+  <p>
+    <strong>Scalability:</strong> Cheaper to host. No server maintenance + sites
+    can scale without worry (CDN compensates for more visitors).
+  </p>
+  <p>
+    <strong>Security:</strong> No need to worry about server or db
+    vulnerabilities
+  </p>
+  <p>
+    <strong>DX:</strong> Front end focused, allows quicker dev with modern tools
+  </p>
+  <p>
+    <strong>Front end:</strong> Build full-stack apps with only JS knowledge +
+    leverage existing microservices for deeper functionality
+  </p>
 </Notes>
 
 ---
@@ -135,18 +166,39 @@ Any project that relies on a tight coupling between client and server:
 <ul>
   <Appear>
     <li>A site built with a server-side CMS using a built-in theme</li>
-    <img className="logo" src={require("file-loader!./images/logo-wordpress.png")} />
-    <img className="logo" src={require("file-loader!./images/logo-drupal.png")} />
-    <img className="logo" src={require("file-loader!./images/logo-joomla.jpg")} />
-    <img className="logo" src={require("file-loader!./images/logo-squarespace.png")} />
-    <li>A single page app that uses isomorphic rendering to build views on the server at runtime</li>
-    <li>A monolithic server-run web app that relies on Ruby, Node, or another backend languages</li>
+    <img
+      className="logo"
+      src={require("file-loader!./images/logo-wordpress.png")}
+    />
+    <img
+      className="logo"
+      src={require("file-loader!./images/logo-drupal.png")}
+    />
+    <img
+      className="logo"
+      src={require("file-loader!./images/logo-joomla.jpg")}
+    />
+    <img
+      className="logo"
+      src={require("file-loader!./images/logo-squarespace.png")}
+    />
+    <li>
+      A single page app that uses isomorphic rendering to build views on the
+      server at runtime
+    </li>
+    <li>
+      A monolithic server-run web app that relies on Ruby, Node, or another
+      backend languages
+    </li>
   </Appear>
 </ul>
 
 <Notes>
   <p>It's not WordPress, Drupal, Joomla, or Squarespace</p>
-  <p>(unless you are using a REST API to bring content stored there into a decoupled front end)</p>
+  <p>
+    (unless you are using a REST API to bring content stored there into a
+    decoupled front end)
+  </p>
 </Notes>
 
 ---
@@ -158,17 +210,31 @@ export default Layout;
 <Appear>
   <h2>“Static site” generator</h2>
   <p>Jekyll, Next, Hugo, Gatsby, React Static, Vuepress, Middleman...</p>
-  <p><a href="http://staticgen.com" target="_blank">staticgen.com</a></p>
+  <p>
+    <a href="http://staticgen.com" target="_blank">
+      staticgen.com
+    </a>
+  </p>
   <h2>Headless CMS</h2>
-  <p><strong>Open source:</strong> Netlify CMS, Strapi, Ghost, WordPress...</p>
-  <p><strong>Commercial:</strong> Sanity, Scrivito, Contentful, Cosmic JS, DatoCMS, Forestry...</p>
-  <a href="http://headlesscms.org" target="_blank">headlesscms.org</a>
+  <p>
+    <strong>Open source:</strong> Netlify CMS, Directus, Strapi, Ghost,
+    WordPress...
+  </p>
+  <p>
+    <strong>Commercial:</strong> Cosmic JS, Sanity, Forestry, Prismic,
+    Contentful, DatoCMS...
+  </p>
+  <a href="http://headlesscms.org" target="_blank">
+    headlesscms.org
+  </a>
 </Appear>
-
 
 ---
 
-<Image src="https://cdn-images-1.medium.com/max/1280/1*TdRFV0LAG7TG3US2YJMALA.jpeg" size="90% auto" />
+<Image
+  src="https://cdn-images-1.medium.com/max/1280/1*TdRFV0LAG7TG3US2YJMALA.jpeg"
+  size="90% auto"
+/>
 
 ---
 
@@ -192,17 +258,35 @@ export default LayoutGradientBg;
 # Real world <span className="dark">JAM</span>stack
 
 Portfolio site with a contact form
+
 <ul>
-  <li>Static site generator: <strong><a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a></strong></li>
-  <li>Headless CMS: <strong>none</strong></li>
-  <li>Version control: <strong>GitHub</strong></li>
-  <li>Host: <strong>Netlify</strong></li>
+  <li>
+    Static site generator:{" "}
+    <strong>
+      <a href="https://www.gatsbyjs.org/" target="_blank">
+        Gatsby
+      </a>
+    </strong>
+  </li>
+  <li>
+    Headless CMS: <strong>none</strong>
+  </li>
+  <li>
+    Version control: <strong>GitHub</strong>
+  </li>
+  <li>
+    Host: <strong>Netlify</strong>
+  </li>
 </ul>
 
 <Notes>
-  <p>A traditional form would require a server to store entries in a database</p>
+  <p>
+    A traditional form would require a server to store entries in a database
+  </p>
   <p>But the JAMstack offers a better and easier way</p>
-  <p>Let's start by installing the Gatsby CLI tools and set up a new Gatsby site</p>
+  <p>
+    Let's start by installing the Gatsby CLI tools and set up a new Gatsby site
+  </p>
 </Notes>
 
 ---
@@ -226,7 +310,10 @@ gatsby develop
 
 <Notes>
   <p>Once our Gatsby site is set up, we want to hook it up to a GitHub repo</p>
-  <p>Allows for continous deployment -> meaning when we push our code, the site will automatically build and deploy</p>
+  <p>
+    Allows for continous deployment -> meaning when we push our code, the site
+    will automatically build and deploy
+  </p>
 </Notes>
 
 ---
@@ -257,7 +344,10 @@ git push -u origin master
 <Notes>
   <p>Now we have a Gatsby site using the Forty starter</p>
   <p>That site is hooked up to a new GitHub repo</p>
-  <p>The last step is to deploy (or host) this site on the web so we can set up and test our form</p>
+  <p>
+    The last step is to deploy (or host) this site on the web so we can set up
+    and test our form
+  </p>
 </Notes>
 
 ---
@@ -267,7 +357,12 @@ export default LayoutGradientBg;
 # Deploy your site
 
 <ol>
-  <li>Sign up or sign in: <a href="https://app.netlify.com/signup" target="_blank">https://app.netlify.com/signup</a></li>
+  <li>
+    Sign up or sign in:{" "}
+    <a href="https://app.netlify.com/signup" target="_blank">
+      https://app.netlify.com/signup
+    </a>
+  </li>
   <li>Click "New site from Git"</li>
   <li>Connect to GitHub</li>
   <li>Select your repo</li>
@@ -287,7 +382,10 @@ export default LayoutGradientBg;
   <li>Add a name attribute to your form: `name="contact"`</li>
   <li>Hook it up to Netlify: `data-netlify="true"`</li>
   <li>To help avoid spam, add: `data-netlify-honeypot="bot-field"`</li>
-  <li>Add a honeypot field: `<input type="hidden" name="form-name" value="contact" />`</li>
+  <li>
+    Add a honeypot field: `
+    <input type="hidden" name="form-name" value="contact" />`
+  </li>
   <li>Commit and push</li>
 </ol>
 
@@ -380,5 +478,14 @@ Submit an entry:<br/>
 
 <ul>
   <li>Visit the Forms dashboard to check entries</li>
-  <li>Set up a <a href="https://zapier.com/app/editor/55819025/nodes/55819025/action" target="_blank">Zapier integration</a> to receive form entry notifications</li>
+  <li>
+    Set up a{" "}
+    <a
+      href="https://zapier.com/app/editor/55819025/nodes/55819025/action"
+      target="_blank"
+    >
+      Zapier integration
+    </a>{" "}
+    to receive form entry notifications
+  </li>
 </ul>

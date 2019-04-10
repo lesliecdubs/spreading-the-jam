@@ -124,7 +124,7 @@ export default Layout;
 ---
 
 <Image
-  src="https://snipcart.com/media/204006/jamstack-vs-wordpress-1.png"
+  src={require("file-loader!./images/jamstack-workflow-snipcart.png")}
   size="75% auto"
 />
 
@@ -327,9 +327,6 @@ Portfolio site with a contact form
     </strong>
   </li>
   <li>
-    <span className="dark">Headless CMS:</span> <strong>none</strong>
-  </li>
-  <li>
     <span className="dark">Version control:</span>{" "}
     <strong>
       <a
@@ -473,9 +470,6 @@ Portfolio site with a contact form
     </strong>
   </li>
   <li>
-    <span className="dark">Headless CMS:</span> <strong>none</strong>
-  </li>
-  <li>
     <span className="dark">Version control:</span>{" "}
     <strong>
       <a
@@ -595,9 +589,14 @@ export default LayoutGradientBg;
 
 # Set up your form
 
+More details on form handling in React apps on the <a href="https://www.netlify.com/blog/2017/07/20/how-to-integrate-netlifys-form-handling-in-a-react-app/" target="_blank">Netlify Blog ></a>
+
 <ol>
-  <li>Open `Contact.js` in your editor</li>
-  <li>Find your form</li>
+  <li>Open `Contact.js` in your favorite IDE</li>
+  <li>
+    Find the form element (or, if you're not using the starter, mark up a custom
+    form)
+  </li>
   <li>Add a name attribute to your form: `name="contact"`</li>
   <li>Hook it up to Netlify: `data-netlify="true"`</li>
   <li>To help avoid spam, add: `data-netlify-honeypot="bot-field"`</li>
@@ -623,79 +622,45 @@ export default LayoutGradientBg;
 
 <CodeSurfer
   theme={nightOwl}
+  lang="html"
   code={`
-<form method="post">
-  <div className="field half first">
-    <label htmlFor="name">Name</label>
-    <input type="text" name="name" id="name" />
-  </div>
-  ...
-</form>
-`}
+    <form 
+      method="post"
+      name="contact"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+    >
+      <input type="hidden" name="contact" value="contact" />
+      <div className="field half first">
+        <label htmlFor="name">Name</label>
+        <input type="text" name="name" id="name" />
+      </div>
+      ...
+    </form>
+  `}
+  dark={false}
+  showNumbers={false}
+  steps={[
+    { notes: "Open `Contact.js` in your favorite IDE" },
+    { range: [2, 3], notes: "Find the <form> element" },
+    { lines: [4], notes: "Add a name to differentiate this form" },
+    { lines: [5], notes: "Hook this form up to Netlify Forms" },
+    {
+      lines: [6],
+      notes: "Let Netlify help filter spam without showing captcha to users"
+    },
+    {
+      lines: [8],
+      notes: "Add hidden input field with the form name"
+    }
+  ]}
 />
 
----
-
-<CodeSurfer
-  theme={nightOwl}
-  code={`
-<form method="post" name="contact">
-  <div className="field half first">
-    <label htmlFor="name">Name</label>
-    <input type="text" name="name" id="name" />
-  </div>
-  ...
-</form>
-`}
-/>
-
----
-
-<CodeSurfer
-  theme={nightOwl}
-  code={`
-<form method="post" name="contact" data-netlify="true">
-  <div className="field half first">
-    <label htmlFor="name">Name</label>
-    <input type="text" name="name" id="name" />
-  </div>
-  ...
-</form>
-`}
-/>
-
----
-
-<CodeSurfer
-  theme={nightOwl}
-  code={`
-<form method="post" name="contact" data-netlify="true" 
-data-netlify-honeypot="bot-field">
-  <div className="field half first">
-    <label htmlFor="name">Name</label>
-    <input type="text" name="name" id="name" />
-  </div>
-  ...
-</form>
-`}
-/>
-
----
-
-<CodeSurfer
-  theme={nightOwl}
-  code={`
-<form method="post" name="contact" data-netlify="true" 
-data-netlify-honeypot="bot-field">
-  <input type="hidden" name="form-name" value="contact" />
-  <div className="field half first">
-    <label htmlFor="name">Name</label>
-    <input type="text" name="name" id="name" />
-  </div>
-  ...
-</form>
-`}
-/>
+<Notes>
+  <p>If you’re using a static site generator like Gatsby or React-Static, or tools like react-snapshot that generate a static snapshot of your site, the build tool will generate the static HTML form automatically for you.</p>
+  <p>That means we can add the Netlify attributes directly to our JSX form.</p>
+  <p>Gatsby strips out input fields that are not included in the JSX form, so you will still need to add a hidden input field with the form name.</p>
+</Notes>
 
 ---
 

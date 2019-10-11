@@ -143,16 +143,20 @@ export default LayoutBlank;
 <Notes>
   <h2>Traditional workflow</h2>
   <p>Fetch data at runtime</p>
-  <p>When the page loads in the browser, the database is queried</p>
-  <p>Then an HTML page with db content is generated server-side, and finally served to the client</p>
-  <p>Tends to make for a slower site, offloads the slowness onto your user</p>
+  <p>When the page loads in the browser, the request eventually needs to get sent to a database server</p>
+  <p>Once we get the datat we need, the db server will send the site back through a web server where an HTML page with our dynamic data will get assembled</p>
+  <p>Finally, that page will get served to the client (browser)</p>
+  <p>There are often additional steps to this process: CDN layer to help with caching, load balancer to help distribute traffic to the right servers</p> 
+  <p>This tends to make for a slower site, offloads the slowness onto your user</p>
+  <p>There are also multiple possible points of failure</p>
   <hr />
   <h2>JAMstack workflow</h2>
-  <p>Developer typically uses a SSG to build their site</p>
+  <p>In JAMstack or a static site, we fetch data at build time</p>
   <p>Data - or content - may live in a headless CMS, or in markdown files in the repo</p>
-  <p>Fetch data at build time</p>
   <p>Developer eats that server "slowness" in the build step</p>
   <p>Lucky for us, that build step can be automated</p>
+  <p>When the page loads in the borwser, the request goes directly to a CDN that has a pre-rendered view of that site</p>
+  <p>Which gets delievered back to the client</p>
   <p>Delivers a super fast site to your user</p>
 </Notes>
 
@@ -200,11 +204,10 @@ export default Layout;
 
 # What the <span className="highlight">JAM</span>stack _isn’t_
 
-Any project that relies on a tight coupling between client and server:
+Tight coupling between client and server:
 
 <ul>
   <Appear>
-    <li>A site built with a server-side CMS using a built-in theme</li>
     <img
       className="logo"
       src={require("file-loader!./images/logo-wordpress.png")}
@@ -221,23 +224,24 @@ Any project that relies on a tight coupling between client and server:
       className="logo"
       src={require("file-loader!./images/logo-squarespace.png")}
     />
-    <li>
-      A single page app that uses isomorphic rendering to build views on the
-      server at runtime
-    </li>
-    <li>
-      A monolithic server-run web app that relies on Ruby, Node, or another
-      backend languages
-    </li>
+    <li>server-side rendered SPA</li>
+    <li>monolithic server-run web app</li>
   </Appear>
 </ul>
 
 <Notes>
-  <p>It's not WordPress, Drupal, Joomla, or Squarespace</p>
+  <p>1. A site built with a server-side CMS using a built-in theme</p>
+  <p>e.g. WordPress, Drupal, Joomla, or Squarespace</p>
   <p>
-    (unless you are using a REST API to bring content stored there into a
+    (unless you are using a REST API to bring content stored in one of those places into a
     decoupled front end)
   </p>
+  <hr />
+  <p>2. A single page app that uses isomorphic rendering to build views on the
+      server at runtime</p>
+  <hr />
+  <p>3. A monolithic server-run web app that relies on Ruby, Node, or another
+      backend languages</p>
   <hr />
   <h2>When not to use JAMstack</h2>
   <p>Massive site (due to time needed for build step)</p>

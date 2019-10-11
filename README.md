@@ -56,7 +56,7 @@ This deck is hosted on [Netlify](https://www.netlify.com) with continuous deploy
 - **Site**: [jamstack.org](https://jamstack.org)
 - **Site**: [staticgen.com](https://staticgen.com)
 - **Site**: [headlesscms.org](https://headlesscms.org)
-- **Talks**: [JAMstack Conf on YouTube](https://www.youtube.com/watch?v=VzQ0d8-nMhw)
+- **Talks**: [JAMstack Conf on YouTube](https://www.youtube.com/channel/UC8bRyfU7ycLXnEBfvdorpUg)
 - **Form**: [Netlify Community](https://community.netlify.com)
 
 ## Who Am I?

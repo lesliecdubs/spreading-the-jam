@@ -29,9 +29,16 @@ Getting started with the JAMstack<br /> using Gatsby and Netlify Forms
 
 <Notes>
   <p>So excited to be here with you (remotely) today!</p>
-  <p>Over the next half hour, we'll look at getting started with the JAMstack and how you can set up a static site that collects form responses - without any server side code - using Gatsby and Netlify Forms.</p>
+  <p>
+    Over the next half hour, we'll look at getting started with the JAMstack and
+    how you can set up a static site that collects form responses - without any
+    server side code - using Gatsby and Netlify Forms.
+  </p>
   <p>Whoa, that's a lot of buzzwords!</p>
-  <p>Some of them may sound familiar, especially if you were at Sarah Drasner's workshop yesterday. I hope this talk will be a useful refresher.</p>
+  <p>
+    Some of them may sound familiar, especially if you were at Sarah Drasner's
+    workshop yesterday. I hope this talk will be a useful refresher.
+  </p>
   <p>But before we dig in, a little about me...</p>
 </Notes>
 
@@ -57,17 +64,33 @@ Front end engineer at Netlify
   <h2>Intro + Netlify</h2>
   <p>My name is LCW</p>
   <p>I work remotely from Dallas as a FE engineer at Netlify</p>
-  <p>Netlify is a platform that helps you build fast, modern websites on the JAMstack, and then helps you host them</p>
+  <p>
+    Netlify is a platform that helps you build fast, modern websites on the
+    JAMstack, then helps you host them
+  </p>
   <p>I work on the front end of the React app that powers Netlify</p>
-  <p>We deploy Netlify on Netlify</p>
+  <p>We deploy Netlify on Netlify (so meta!)</p>
   <hr />
   <h2>Agency life</h2>
-  <p>Started my dev career in NYC, working at digital agencies</p>
-  <p>Nintendo, Seinfeld, WorldPride, etc</p>
-  <p>Agency world is where I first learned about the JAMstack</p>
-  <p>As a FE dev, JAMstack gave me superpowers - from setting up a CMS service to deployment</p>
+  <p>
+    Started my dev career in NYC, working at digital agencies on sites for
+    clients like Nintendo and Jerry Seinfeld
+  </p>
+  <p>
+    I was used to having to bug backend engineers to get my front end views
+    wired up to the back end properly
+  </p>
+  <p>
+    And then I had to bother the DevOps team to prepare a staging environment
+  </p>
+  <p>It seemed like there should be a be a better way. Enter the JAMstack!</p>
+  <p>
+    As a FE dev, this new approach to building sites gave me superpowers, and
+    allowed me to ignore all that other stuff and focus on building impressive
+    front end experiences
+  </p>
   <hr />
-  <p>Handle is @lesliecdubs, find me on Twitter + GitHub</p>
+  <p>Btw, my handle is @lesliecdubs, find me on Twitter + GitHub</p>
 </Notes>
 
 ---
@@ -89,28 +112,33 @@ export default Layout;
 </ul>
 
 <Notes>
-  <h2>JAMstack</h2>
   <p>
-    <strong>Javascript:</strong> client-side functionality (often via framework,
-    e.g. React or Vue, or vanilla JS / jQuery)
+    <strong>Javascript:</strong> client-side functionality (often via a
+    framework like React or Vue, or vanilla JS / jQuery)
   </p>
   <p>
-    <strong>API (Application Programming Interface):</strong> JAMstack sites use APIs to integrate data and other dynamic information, often as JSON, with your front end (headless CMS)</p>
+    <strong>API (Application Programming Interface):</strong> JAMstack sites use
+    APIs to integrate data and other dynamic information. They often serve this
+    data to your front end through JSON
+  </p>
   <p>
     <strong>Markup:</strong> HTML / presentation layer
   </p>
   <hr />
-  <h2>Decoupled web</h2>
-  <p>JAMstack === decoupled approach to web dev</p>
+  <p>So what does that mean? The JAMstack is a decoupled approach to web dev</p>
   <p>"Separation of concerns" for front + back end</p>
-  <p>Front end has its own repo (JS + Markup), connects to "back end" via APIs</p>
+  <p>
+    Front end has its own repo (JS + Markup), connects to "back end" via APIs
+  </p>
   <p>
     Leverage microservices + serverless functions to build more complex +
     dynamic web apps
   </p>
-  <p>The name was coined bc "static site" doesn't do it justice (comment systems, web forms, ecommerce...)</p>
+  <p>
+    The name was coined bc "static site" doesn't do it justice (comment systems,
+    web forms, ecommerce...)
+  </p>
   <hr />
-  <h2>Is this really a thing?</h2>
   <p>
     JAMstack as a term has been around for 3 or 4 years, though the idea
     predates that
@@ -140,21 +168,40 @@ export default LayoutBlank;
 <Notes>
   <h2>Traditional workflow</h2>
   <p>Fetch data at runtime</p>
-  <p>When the page loads in the browser, the request eventually needs to get sent to a database server</p>
-  <p>Once we get the data we need, the db server will send the site back through a web server where an HTML page with our dynamic data will get assembled</p>
+  <p>
+    When a user loads a page in their browser, traditional sites will send a
+    request to be processed by a database server
+  </p>
+  <p>
+    Once that request is filled, the web server will stitch the data response
+    together with HTML to assemble a dynamic view
+  </p>
   <p>Finally, that page will get served to the client (browser)</p>
-  <p>There are often additional steps to this process: CDN layer to help with caching, load balancer to help distribute traffic to the right servers</p> 
-  <p>This tends to make for a slower site, offloads the slowness onto your user</p>
-  <p>There are also multiple possible points of failure</p>
+  <p>
+    Other steps: CDN layer helps with caching, and probably load balancer to
+    help distribute traffic to the right servers
+  </p>
+  <p>Creates a slower experience for users with multiple points of failure</p>
   <hr />
   <h2>JAMstack workflow</h2>
-  <p>In JAMstack or a static site, we fetch data at build time</p>
-  <p>Data - or content - may live in a headless CMS, or in markdown files in the repo, or pulled in via other APIs</p>
-  <p>Developer eats that server "slowness" in a build step (also happens during deploy)</p>
-  <p>Lucky for us, that build step can be automated w CICD (continuous integration & continous delivery)</p>
-  <p>When the page loads in the borwser, the request goes directly to a CDN that has a pre-rendered view of that site</p>
+  <p>Fetch data at build time</p>
+  <p>
+    Content may live in a CMS, markdown files in the repo, or pulled in via APIs
+  </p>
+  <p>
+    Instead of the user waiting for the server to dynamically render their
+    views, the JAMstack offloads that wait time onto the developer during a
+    build step
+  </p>
+  <p>
+    Lucky for us, that build step can be automated w continuous integration &
+    delivery
+  </p>
+  <p>
+    When the page loads in the browser, the request goes directly to a CDN that
+    has a pre-rendered view of that site
+  </p>
   <p>Which gets delievered back to the client</p>
-  <p>Delivers a super fast site to your user</p>
 </Notes>
 
 ---
@@ -175,8 +222,10 @@ export default Layout;
 
 <Notes>
   <p>
-    <strong>Perf:</strong> Serve pre-built markup and assets over a CDN (Content
-    Delivery Network)
+    Given what we now know about how the JAMstack works, it's clear that one the
+    biggest advantages of this architure is <strong>performance:</strong> We
+    serve pre-built markup and assets over a CDN (Content Delivery Network) so
+    our sites load really, really fast (and we get better Lighthouse scores)
   </p>
   <p>
     <strong>Scalability:</strong> Cheaper to host. No server maintenance + sites
@@ -227,79 +276,110 @@ Tight coupling between client and server:
 </ul>
 
 <Notes>
-  <p>1. A site built with a server-side CMS using a built-in theme</p>
-  <p>e.g. WordPress, Drupal, Joomla, or Squarespace</p>
   <p>
-    (unless you are using a REST API to bring content stored in one of those places into a
-    decoupled front end)
+    It can be helpful to understand what a particular architure is by exploring
+    what it is not.
   </p>
   <hr />
-  <p>2. A single page app that uses isomorphic rendering to build views on the
-      server at runtime</p>
+  <p>
+    1. A JAMstack site wouldn't be built with a server-side CMS using a built-in
+    theme (traditional WP, Drupal, Joomla, or Squarespace)
+  </p>
+  <p>
+    (unless you are using a REST API to bring content stored in one of those
+    places into a decoupled front end)
+  </p>
   <hr />
-  <p>3. A monolithic server-run web app that relies on Ruby, Node, or another
-      backend languages</p>
+  <p>
+    2. A JAMstack site isn't a single page app that uses isomorphic rendering to
+    build views on the server at runtime. JAMstack sites fetch data at build
+    time, and can instead use progressive enhancement to bring interactivity
+    into the browser at runtime
+  </p>
+  <hr />
+  <p>
+    3. And finally, we have monolithic web apps that rely on Ruby or other
+    backend languages
+  </p>
   <hr />
   <h2>When not to use JAMstack</h2>
-  <p>Massive site (due to time needed for build step)</p>
+  <p>Massive site (millions of pages) due to time needed for build step</p>
+  <p>
+    However, the tools that we use to build JAMstack sites can help keep build
+    times in check
+  </p>
   <p>
     If you need hand-written dynamic features like comments, e-commerce, etc,
-    and can't use an existing service like Disqus, Stripe, Netlify Forms, etc
+    and can't use an existing service like Disqus, Stripe, Netlify forms, etc
   </p>
+  <p>So what are the ingredients of a JAMstack site?</p>
 </Notes>
 
 ---
 
 export default Layout;
 
-# <span className="highlight">JAM</span>stack Ingredients
+# Ingredients
 
 <Appear>
-  <h2>“Static site” generator</h2>
-  <p>Jekyll, Next, Hugo, Gatsby, React Static, Vuepress, Middleman...</p>
-  <p>
-    <a href="http://staticgen.com" target="_blank">
-      staticgen.com
+  <div>
+    <h2>“Static site” generator</h2>
+    <p>Jekyll, Next, Hugo, Gatsby, React Static, Vuepress, Middleman...</p>
+    <p>
+      <a href="http://staticgen.com" target="_blank">
+        staticgen.com
+      </a>
+    </p>
+  </div>
+  <div>
+    <h2>Headless CMS</h2>
+    <p>
+      <strong className="highlight">Open source:</strong> Netlify CMS, Directus,
+      Strapi, Ghost, WordPress...
+    </p>
+    <p>
+      <strong className="highlight">Commercial:</strong> Cosmic JS, Sanity,
+      Forestry, Prismic, Contentful, DatoCMS...
+    </p>
+    <a href="http://headlesscms.org" target="_blank">
+      headlesscms.org
     </a>
-  </p>
-  <h2>Headless CMS</h2>
-  <p>
-    <strong className="highlight">Open source:</strong> Netlify CMS, Directus,
-    Strapi, Ghost, WordPress...
-  </p>
-  <p>
-    <strong className="highlight">Commercial:</strong> Cosmic JS, Sanity,
-    Forestry, Prismic, Contentful, DatoCMS...
-  </p>
-  <a href="http://headlesscms.org" target="_blank">
-    headlesscms.org
-  </a>
+  </div>
   <h2>Version control</h2>
 </Appear>
 
 <Notes>
   <h2>Static site generator</h2>
-  <p>Static - lacking in movement or change; we're talking about static architecture (host statically), not static experience</p>
-  <p>Can be Javascript-based, but doesn't have to be</p>
   <p>
-    Some use super modern tech like GraphQL, CSS in JS, etc, or you can rely on
-    a more simplified framework
+    First, we rely on static site generators to build all of the pages of our
+    websites, when there are changes to the site
   </p>
+  <p>
+    The word "static" can be a little misleading; we are not talking a static or
+    unchanging user experience, but about static architecture (host statically)
+  </p>
+  <p>SSGs can be Javascript-based, but dont have to be</p>
   <hr />
   <h2>Headless CMS</h2>
-  <p>CMS = Content Management System</p>
   <p>
-    Open source options - you can submit PRs, community-driven, usually a little
-    more scrappy
+    The next ingredient is often a CMS to help manage the dynamic, changing
+    content on our site
   </p>
   <p>
+    The field of headless CMSes has exploded recently, so there are a lot of
+    options to choose from based on your needs
+  </p>
+  <p>Open source options - you can submit PRs, community-driven</p>
+  <p>
     Commercial options - many offer free tier but require payment for heavier
-    usage, backed by $ and full-time team
+    usage, well funded, backed by full-time team
   </p>
   <hr />
   <h2>Version control</h2>
-  <p>Best practice to use Git nowadays for handling version control</p>
-  <p>GitHub, GitLab, Bitbucket</p>
+  <p>
+    Best practice to use Git (usually either GitHub, GitLab or Bitbucket) for
+    handling version control
+  </p>
 </Notes>
 
 ---
@@ -310,14 +390,21 @@ export default Layout;
 />
 
 <Notes>
-  <p>You can see how big the ecosystem really is</p>
   <p>
-    Lots of tools to choose from, but you'll want some kind of presentation
-    layer
+    Whew, this slide is overwhelming! but it shows how big the ecosystem really
+    is
   </p>
-  <p>If you need dynamic data, you'll want to wire in an API of some kind</p>
+  <p>
+    You'll always want some kind of presentation layer; perhaps React or Vue, or
+    a static site generator like Jekyll or Hugo, or a UI library or toolkit
+  </p>
+  <p>
+    If you need dynamic data, you'll want to wire in an API of some kind. This
+    could include a CMS or a utility API
+  </p>
   <p>Ideally you're using version control and storing your code in Git</p>
-  <p>And hosting on Netlify</p>
+  <p>And then you'll need a host. My favorite is Netlify.</p>
+  <p>So, if you put all of these ingredients together, what do you get?</p>
 </Notes>
 
 ---
@@ -360,10 +447,15 @@ Portfolio site with a contact form
 
 <Notes>
   <p>
-    A traditional form would require a server to store entries in a database
+    A simple example of a JAMstack app is a portfolio website with a contact
+    form
   </p>
+  <p>A traditional form would require a database to store the form entries</p>
   <p>But the JAMstack offers a better and easier way</p>
-  <p>First, let's dive briefly into what Gatsby and Netlify are</p>
+  <p>
+    Before we start building, let's talk for a second about the specific tools
+    we've chosen for this project
+  </p>
 </Notes>
 
 ---
@@ -386,19 +478,33 @@ A “static site generator” based on React
 
 <Notes>
   <p>
-    I chose Gatsby for this demo bc I work in React every day, but we
-    could have used any static site generator for this example
+    I chose Gatsby for this demo bc I work in React every day, but we could have
+    used any static site generator for this example
   </p>
   <p>
     At build time, Gatsby creates an internal GraphQL server of all your data
-    (wherever it may be stored - Markdown, JSON, a CMS, third party API, etc). All your data is queried at build time from your React components in a
+    (wherever it may be stored - Markdown, JSON, a CMS, third party API, etc).
+    All your data is queried at build time from your React components in a
     consistent way
   </p>
-  <p>Gatsby ecosystem is rich; data source plugins provide for an easy connection to your CMS API</p>
-  <p>Gatsby has clear documentation + starters, which are Gatsby sites that are preconfigured for different use cases to give you a head start for your project.</p>
+  <p>
+    Gatsby ecosystem is rich; data source plugins provide for an easy connection
+    to APIs
+  </p>
+  <p>
+    Gatsby has clear documentation + starters, which are Gatsby sites that are
+    preconfigured for different use cases to give you a head start for your
+    project
+  </p>
   <p>Built with performance and accessibility in mind</p>
-  <p>(no more clicks) So, once we have this Gatsby site, what are we going to do with it?</p>
-  <p>The JAMstack model would tell us we want to host it as a static site. That's where Netlify comes in...</p>
+  <p>
+    (no more clicks) So, assuming we've set up a Gatsby site, what do we do with
+    it?
+  </p>
+  <p>
+    The JAMstack architecture would tell us that we want to host it statically,
+    right? That's where Netlify comes in...
+  </p>
 </Notes>
 
 ---
@@ -421,23 +527,22 @@ A “static site” hosting provider leveraging all the benefits of the JAMstack
 </ul>
 
 <Notes>
-  <h2>Automated builds</h2>
-  <p>Automated builds with continous deployment from Git provider</p>
+  <p>Netlify helps you build and manage JAMstack projects.</p>
   <p>
-    Hook a Netlify site up to a Git repo to get Deploy Previews + Branch Deploys
-    to share work in progress URLs
+    It offers automated builds with continous deployment from your Git provider
   </p>
-  <p>Configure Netlify to build + deploy every time you push or merge</p>
+  <p>Configure Netlify to build + deploy when you push to git</p>
   <p>
     Set up webhooks to trigger deploys based on an action elsewhere (e.g.,
     content update in Contentful)
   </p>
   <hr />
-  <h2>Atomic deploys</h2>
-  <p>Atomic deploy = versioning your content by fingerprinting</p>
-  <p>Instead of pushing individual files (FTP), Netlify creates new deploy</p>
+  <p>Netlify's deploys are atomic = versions your content by fingerprinting</p>
   <p>
-    Compares new deploy with your existing deploy and determines what files have
+    Instead of pushing individual files (FTP), Netlify creates new deploy object
+  </p>
+  <p>
+    Compares new deploy with existing deploy and determines what files have
     changed
   </p>
   <p>
@@ -445,17 +550,16 @@ A “static site” hosting provider leveraging all the benefits of the JAMstack
     instantly
   </p>
   <hr />
-  <h2>Custom domains</h2>
-  <p>Sites come with their own customizable *.netlify.com URL</p>
+  <p>
+    Netlify sites come with their own customizable URL, your-site.netlify.com
+  </p>
   <p>Or buy a custom domain through Netlify or another domain provider</p>
-  <p>Easily set it up to point to your Netlify site</p>
   <hr />
-  <h2>Automatic HTTPs</h2>
-  <p>Free HTTPS comes with all sites for security, SEO +content integrity</p>
+  <p>Free HTTPS comes out of the box</p>
   <hr />
   <p>Simple setup</p>
   <p>
-    Free team, with flexible pricing tiers and add-ons if you need more team
+    Free team with flexible pricing tiers and add-ons if you need more team
     members, bandwidth, guaranteed support, etc
   </p>
 </Notes>
@@ -499,16 +603,16 @@ Portfolio site with a contact form
 </ul>
 
 <Notes>
-  <p>Quick review of what we're going to build</p>
   <p>
-    Portfolio site built with Gatsby with a contact form that is managed by
-    Netlify Forms
+    So, now that we're familiar with the tools we're going to use, let's get
+    started building a portfolio site in Gatsby with a contact form that will
+    store form responses in Netlify
   </p>
 </Notes>
 
 ---
 
-<div style={{"line-height": "3"}}>
+<div style={{ lineHeight: "3" }}>
   <CodeSurfer
     theme={nightOwl}
     code={`
@@ -520,7 +624,10 @@ Portfolio site with a contact form
     dark={false}
     showNumbers={false}
     steps={[
-      { lines: [2], notes: "Install Gatsby CLI globally if you don't already have it" },
+      {
+        lines: [2],
+        notes: "Install Gatsby CLI globally if you don't already have it"
+      },
       { lines: [3], notes: "Create a new site called portfolio" },
       { lines: [4], notes: "Change directories into the new site" },
       {
@@ -533,13 +640,10 @@ Portfolio site with a contact form
 
 <Notes>
   <p>
-    Let's install the Gatsby command line tools and get a Gatsby site set up
+    To start, we would open up the terminal and install the Gatsby command line
+    tools (follow code)
   </p>
-  <p>Once we have the site set up, we'll want to hook it up to a GitHub repo</p>
-  <p>
-    This will allow for continous deployment -> meaning when we push our code,
-    the site will automatically build and deploy
-  </p>
+  <p>Now, let's see what our local Gatsby starter looks like</p>
 </Notes>
 
 ---
@@ -555,19 +659,25 @@ export default LayoutDark;
         muted
         src='./videos/gatsby-starter-forty.mov'
       />
-    `,
+    `
   }}
 />
 
 <Notes>
-  <p>So what do those 4 commands give us?</p>
-  <p>This is what this particular starter looks like</p>
-  <p>We're going to focus in on this contact form so we can capture leads from people who visit our portfolio</p>
+  <p>This is a pretty slick looking starter</p>
+  <p>
+    We're going to focus in on this existing contact form, and hook it up to
+    capture leads from people who visit our site
+  </p>
+  <p>
+    To do that, we'll want to open up our favorite code editor and bring up the
+    Gatsby code in the portfolio directory we just created
+  </p>
 </Notes>
 
 ---
 
-<div style={{"line-height": "1.5"}}>
+<div style={{ lineHeight: "1.5" }}>
   <CodeSurfer
     theme={nightOwl}
     lang="html"
@@ -606,45 +716,62 @@ export default LayoutDark;
 </div>
 
 <Notes>
-  <p>When our site is deployed, Netlify's post-processing bots are going to look for `netlify` attributes on your form in order to capture it</p>
-  <p>These bots only know how to parse HTML, so we have to give them a little help to make sure they can detect forms rendered with Javascript.</p>
-  <p>Open the Contact.js file in your favorite IDE</p>
+  <p>
+    Open the Contact.js file of the Gatsby starter so we can hook it up to
+    Netlify
+  </p>
+  <p>
+    Once the site is deployed, Netlify's post-processing bots are going to look
+    for `netlify` attributes on the form in order to capture it
+  </p>
+  <p>
+    These bots only know how to parse HTML, so we have to give them a little
+    help to make sure they can detect forms rendered with Javascript (walk
+    through code)
+  </p>
+  <p>
+    Now our site is ready to be deployed. Before we do that, let's make sure
+    we've hooked our local code up to a GitHub repository
+  </p>
 </Notes>
 
 ---
 
-<div style={{"line-height": "3"}}>
+<div style={{ lineHeight: "3" }}>
   <CodeSurfer
     theme={nightOwl}
     code={`
   git init
   git add .
   git commit -m "First commit"
-  git remote add origin remote REPOSITORY_URL_GOES_HERE
+  git remote add origin REPOSITORY_URL_GOES_HERE
   git remote -v
-  git push -u origin master
+  git push origin master
   `}
     dark={false}
     showNumbers={false}
     steps={[
       { lines: [2], notes: "Initialize this directory as a git repo" },
-      { lines: [3], notes: "Add the files in the local repository and stage them for commit" },
+      {
+        lines: [3],
+        notes: "Add the files in the local repository and stage them for commit"
+      },
       { lines: [4], notes: "Commit the tracked changes" },
       {
         lines: [5],
         notes: "Create a GitHub repo and copy the repo URL"
       },
       { lines: [6], notes: "Verify new remote URL" },
-      { lines: [7], notes: "Push the master branch to your repo"}
+      { lines: [7], notes: "Push the master branch to your repo" }
     ]}
   />
 </div>
 
 <Notes>
-  <p>Now we want to hook up the directory that holds our new Gatsby site up to GitHub</p>
+  <p>Let's open our terminal again and initalize git (walk through code)</p>
   <p>
-    The last step is to deploy (or host) this site on the web so we can set up
-    and test our form
+    The last step is deploy our code from GitHub to the web with Netlify so we
+    can set up and test our form
   </p>
 </Notes>
 
@@ -661,7 +788,7 @@ export default LayoutDark;
         muted
         src='./videos/deploy-with-netlify.mov'
       />
-    `,
+    `
   }}
 />
 
@@ -672,21 +799,24 @@ export default LayoutDark;
   <p>Select the repo we just created</p>
   <p>Netlify guesses our build settings</p>
   <p>Deploy your site!</p>
+  <p>
+    If you prefer using the command line, Netlify also offers a command line
+    tool to link and deploy sites
+  </p>
 </Notes>
 
 ---
 
 export default Layout;
 
-# Manage + notify
+# Try it live
 
-Submit an entry:<br/>
 <a href="https://netlify-gatsby-form-example.netlify.com/" target="_blank">https://netlify-gatsby-form-example.netlify.com/</a>
 
 <ul>
   <li>Visit the Forms dashboard to check entries</li>
   <li>
-    Set up form notifications with Netlify or a {" "}
+    Set up form notifications with Netlify or a{" "}
     <a
       href="https://zapier.com/app/editor/55819025/nodes/55819025/action"
       target="_blank"
@@ -698,18 +828,15 @@ Submit an entry:<br/>
 
 <Notes>
   <p>
-    Now we can go test our form on our Netlify site by visiting
+    Now we can test the form live on our Netlify site by visiting
     https://netlify-gatsby-form-example.netlify.com/
   </p>
   <p>Fill out the form if you want</p>
-  <p>
-    We can visit our Netlify dashboard, click Forms, and see and manage the
-    entries
-  </p>
+  <p>To see form responses, we can visit the Netlify dashboard</p>
   <p>Netlify is essentially acting as our database to hold the form entries</p>
   <p>
-    To add even more functionality, we can set up email notifications for when a
-    user submits your form
+    You can als set up email notifications so you know when a user submits your
+    form
   </p>
   <p>Let's try it out!</p>
 </Notes>
@@ -727,13 +854,14 @@ export default LayoutDark;
         muted
         src='./videos/fill-out-form.mov'
       />
-    `,
+    `
   }}
 />
 
 <Notes>
   <p>First, we'll visit the site that we deployed on Netlify</p>
   <p>And now we're going to try filling out our form</p>
+  <p>Success! Let's make sure Netlify captured our form entry</p>
 </Notes>
 
 ---
@@ -749,15 +877,19 @@ export default LayoutDark;
         muted
         src='./videos/check-form-submission.mov'
       />
-    `,
+    `
   }}
 />
 
 <Notes>
-  <p>To make sure we captured the form entry, we can visit our Netlify dashboard</p>
+  <p>We would want to visit our Netlify dashboard</p>
   <p>Click into the site and then go to "Forms"</p>
-  <p>We can see our entry!</p>
-  <p>If this site had been live for a while, we could also check out any spam entries that Netlify filtered out for us</p>
+  <p>There's our form, with the name we set earlier</p>
+  <p>And there's our entry!</p>
+  <p>
+    If this site had been live for a while, we could also use this toggle to see
+    any spam entries that Netlify filtered out for us
+  </p>
 </Notes>
 
 ---
@@ -775,35 +907,69 @@ export default Layout;
 </ul>
 
 <Notes>
-  <p>Why does all this matter again?</p>
+  <p>So why does all this matter again?</p>
   <p>JAMstack doesn't mean you're stuck with a "static," unchanging site</p>
-  <p>It means you're choosing all of these advantages - performance, scaling, a better dev experience</p>
-  <p>by choosing a static architecture</p>
+  <p>
+    It means you're choosing all of these advantages - performance, scaling, a
+    better dev experience - by choosing a static architecture and deciding to
+    host statically
+  </p>
 </Notes>
 
 ---
 
 export default Layout;
 
-# Want more <span className="highlight">JAM</span>?
+# Get <span className="highlight">JAM</span>ming
 
 <ul>
   <Appear>
     <li>📕 netlify.com/oreilly-jamstack</li>
-    <li>👩🏿‍🍳 jamstack.org</li>
-    <li>⚡️ staticgen.com</li>
+    <li>🥞 jamstack.org</li>
+    <li>⚡️ staticgen.com + headlesscms.org</li>
     <li>💻 JAMstack Conf</li>
     <li>🇳🇬 community.netlify.com</li>
-    <li>🐦 @lesliecdubs</li>
   </Appear>
 </ul>
 
 <Notes>
-  <p>eBook available for free, "Modern Web Development on the JAMstack" - by Mathias Biilmann and Phil Hawksworth (thanks!)</p>
-  <p>jamstack.org - best practices, examples, resources, links to community meetups (including Lagos!)</p>
-  <p>staticgen.com - a list of SSGs for JAMstack sites, filterable by GitHub stars</p>
-  <p>JAMstack Conf on YouTube - watch videos from past conferences on JAMstack topics</p>
-  <p>community - join us if you have any questions about Netlify or want to see what other people are building</p>
-  <p>@lesliecdubs - I Tweet about JAMstack + frontend</p>
-  <p>Ask for Q&A</p>
+  <p>Want to learn more?</p>
+  <p>
+    There's now a JAMstack eBook published by O'Reilly, available to download
+    for free! "Modern Web Development on the JAMstack" was written by Netlify
+    CEO and co-founder Mathias Biilmann and principal developer advodate Phil
+    Hawksworth, who I should also thank for creating a bunch of great talks that
+    helped inform this one
+  </p>
+  <p>
+    jamstack.org - best practices, examples, resources, links to community
+    meetups (including Lagos!)
+  </p>
+  <p>
+    staticgen.com - a list of SSGs for JAMstack sites, filterable by GitHub
+    stars
+  </p>
+  <p>
+    There's also a community conference around the JAMstack. You can watch
+    videos from past conferences on JAMstack topics on YouTube!
+  </p>
+  <p>
+    Community - join us in the Netlify Community if you have questions, or want
+    to see what other people are building
+  </p>
+</Notes>
+
+---
+
+export default Layout;
+
+# Thank you!
+
+<p>🐦 @lesliecdubs</p>
+
+<Notes>
+  <p>
+    Also, I Tweet about JAMstack + frontend @lesliecdubs - hope to see you there
+  </p>
+  <p>Do we have time for questions?</p>
 </Notes>

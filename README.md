@@ -41,22 +41,28 @@ This deck is hosted on [Netlify](https://www.netlify.com) with continuous deploy
 ## Useful Links
 
 ### For the demo in this presentation:
+
 - [Test GitHub repository](https://github.com/lesliecdubs/netlify-gatsby-form-example)
 - [Live test site](https://netlify-gatsby-form-example.netlify.com/)
 
 ### Netlify Forms documentation:
+
 - [Netlify Blog: Form handling with static site generators](https://www.netlify.com/blog/2017/07/20/how-to-integrate-netlifys-form-handling-in-a-react-app/#form-handling-with-static-site-generators)
 - [Netlify Example: Gatsby site with forms](https://github.com/imorente/gatsby-netlify-form-example)
 
 ### JAMstack resources:
-- **Book**: [Download](https://www.netlify.com/oreilly-jamstack/) the "Modern Web Development on the JAMstack" eBook for free
-- **Talk**: [Watch](https://www.youtube.com/watch?v=VzQ0d8-nMhw) Netlify CEO and co-founder Mathias Biilmann present "How We Talk About the JAMstack" from JAMstack_conf SF 2018
-- **Blog Post**: [Read](https://www.smashingmagazine.com/2019/05/demystifying-jamstack-interview-phil-hawskworth/) "Demystifying JAMstack: An Interview With Phil Hawskworth" on Smashing Magazine
+
+- **Book**: Free download at [netlify.com/oreilly-jamstack](https://www.netlify.com/oreilly-jamstack/)
+- **Site**: [jamstack.org](https://jamstack.org)
+- **Site**: [staticgen.com](https://staticgen.com)
+- **Site**: [headlesscms.org](https://headlesscms.org)
+- **Talks**: [JAMstack Conf on YouTube](https://www.youtube.com/watch?v=VzQ0d8-nMhw)
+- **Form**: [Netlify Community](https://community.netlify.com)
 
 ## Who Am I?
 
 **[Leslie Cohn-Wein](https://twitter.com/lesliecdubs)** is a front end engineer at Netlify who works remotely from Dallas, Texas.
 
-She got her start working in the NYC agency world, developing sites for clients like Nintendo and Jerry Seinfeld. Leslie occasionally co-hosts the devchat.tv podcast [React Round Up](https://devchat.tv/react-round-up/) and cares deeply about accessibility. 
+She got her start working in the NYC agency world, developing sites for clients like Nintendo and Jerry Seinfeld. Leslie occasionally co-hosts the devchat.tv podcast [React Round Up](https://devchat.tv/react-round-up/) and cares deeply about accessibility.
 
 In her spare time, she likes to eat all the things with her [chef husband](http://www.thejoyfulbelly.com/) and is a doting dog mom to a basset hound mix, [Burt Macklin](http://instagram.com/dammitmacklin).

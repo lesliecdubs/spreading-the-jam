@@ -1,6 +1,6 @@
 export { default as theme } from "./src";
 import { Appear, Head, Notes, Image } from "mdx-deck";
-import { LayoutBlank, LayoutGradientBg, Layout } from "./src";
+import { LayoutBlank, LayoutDark, LayoutGradientBg, Layout } from "./src";
 import { CodeSurfer } from "mdx-deck-code-surfer";
 import nightOwl from "prism-react-renderer/themes/nightOwl";
 
@@ -509,22 +509,28 @@ Portfolio site with a contact form
 
 ---
 
-<CodeSurfer
-  theme={nightOwl}
-  code={`
-// install Gatsby CLI globally if you don't already have it
-npm install -g gatsby-cli
-\n
-// create a new site using forty starter called portfolio
-gatsby new portfolio https://github.com/codebushi/gatsby-starter-forty
-\n
-// change directories into new site
-cd portfolio
-\n
-// start dev server
-gatsby develop
-`}
-/>
+<div style={{"line-height": "3"}}>
+  <CodeSurfer
+    theme={nightOwl}
+    code={`
+  npm install -g gatsby-cli
+  gatsby new portfolio https://github.com/codebushi/gatsby-starter-forty
+  cd portfolio
+  gatsby develop
+  `}
+    dark={false}
+    showNumbers={false}
+    steps={[
+      { lines: [2], notes: "Install Gatsby CLI globally if you don't already have it" },
+      { lines: [3], notes: "Create a new site called portfolio" },
+      { lines: [4], notes: "Change directories into the new site" },
+      {
+        lines: [5],
+        notes: "Start dev server"
+      }
+    ]}
+  />
+</div>
 
 <Notes>
   <p>
@@ -539,33 +545,60 @@ gatsby develop
 
 ---
 
-<CodeSurfer
-  theme={nightOwl}
-  code={`
-// initialize this directory as a git repo
-git init
-\n
-// add the files in the local repository and stage them for commit
-git add .
-\n
-// commits the tracked changes
-git commit -m "First commit"
-\n
-// go set up a GitHub repo
-// then grab the repo URL
-git remote add origin remote REPOSITORY-URL-GOES-HERE
-\n
-// verify new remote URL
-git remote -v
-\n
-// push the master branch to your new origin repo
-git push -u origin master
-`}
+export default LayoutDark;
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: `
+      <video
+        style="max-width: 100%"
+        controls
+        muted
+        src='./videos/gatsby-starter-forty.mov'
+      />
+    `,
+  }}
 />
 
 <Notes>
-  <p>Now we have a Gatsby site using the Forty starter</p>
-  <p>That site is hooked up to a new GitHub repo</p>
+  <p>So what do those 4 commands give us?</p>
+  <p>This is what this particular starter looks like</p>
+  <p>We're going to focus in on this contact form so we can capture leads from people who visit our portfolio</p>
+</Notes>
+
+---
+
+<div style={{"line-height": "3"}}>
+  <CodeSurfer
+    theme={nightOwl}
+    code={`
+  git init
+  git add .
+  git commit -m "First commit"
+  git remote add origin remote REPOSITORY_URL_GOES_HERE
+  git remote -v
+  git push -u origin master
+  `}
+    dark={false}
+    showNumbers={false}
+    steps={[
+      { lines: [2], notes: "Initialize this directory as a git repo" },
+      { lines: [3], notes: "Add the files in the local repository and stage them for commit" },
+      { lines: [4], notes: "Commit the tracked changes" },
+      {
+        lines: [5],
+        notes: "Create a GitHub repo and copy the repo URL"
+      },
+      { lines: [6], notes: "Verify new remote URL" },
+      { lines: [7], notes: "Push the master branch to your repo"}
+    ]}
+  />
+</div>
+
+<Notes>
+  <p>Now we want to hook up the directory that holds our new Gatsby site up to GitHub</p>
+  <p>Why? Well, version control is super helpful in managing the project</p>
+  <p>But it will also allow us to set up continuous deployment with Netlify, so the site can rebuild every time you push code in git</p>
   <p>
     The last step is to deploy (or host) this site on the web so we can set up
     and test our form
@@ -574,96 +607,69 @@ git push -u origin master
 
 ---
 
-export default LayoutGradientBg;
+export default LayoutDark;
 
-# Deploy your site to Netlify
-
-<ol>
-  <li>
-    Sign up or sign in:{" "}
-    <a href="https://app.netlify.com/signup" target="_blank">
-      https://app.netlify.com/signup
-    </a>
-  </li>
-  <li>Click "New site from Git"</li>
-  <li>Connect to GitHub</li>
-  <li>Select your repo</li>
-  <li>Set your site + build settings</li>
-  <li>Deploy your site!</li>
-</ol>
-
----
-
-export default LayoutGradientBg;
-
-# Set up your form
-
-More details on form handling in React apps on the <a href="https://www.netlify.com/blog/2017/07/20/how-to-integrate-netlifys-form-handling-in-a-react-app/" target="_blank">Netlify Blog ></a>
-
-<ol>
-  <li>Open `Contact.js` in your favorite IDE</li>
-  <li>
-    Find the form element (or, if you're not using the starter, mark up a custom
-    form)
-  </li>
-  <li>Add a name attribute to your form: `name="contact"`</li>
-  <li>Hook it up to Netlify: `data-netlify="true"`</li>
-  <li>To help avoid spam, add: `data-netlify-honeypot="bot-field"`</li>
-  <li>
-    Add a honeypot field: `input type="hidden" name="form-name" value="contact"`
-  </li>
-  <li>Commit and push</li>
-</ol>
+<div
+  dangerouslySetInnerHTML={{
+    __html: `
+      <video
+        style="max-width: 100%"
+        controls
+        muted
+        src='./videos/deploy-with-netlify.mov'
+      />
+    `,
+  }}
+/>
 
 <Notes>
-  <p>Now we're ready to set up our form to work with Netlify Forms</p>
-  <p>
-    All this requires when using a Gatsby site are the addition of two data
-    attributes to the form element
-  </p>
-  <p>
-    And the addition of a hidden honeypot field to help Netlify capture spam
-    submissions for you
-  </p>
+  <p>Visit app.netlify.com and create an account or log in</p>
+  <p>Click "New site from Git"</p>
+  <p>Connect to GitHub</p>
+  <p>Select the repo we just created</p>
+  <p>Netlify guesses our build settings</p>
+  <p>Deploy your site!</p>
 </Notes>
 
 ---
 
-<CodeSurfer
-  theme={nightOwl}
-  lang="html"
-  code={`
-    <form 
-      method="post"
-      name="contact"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-    >
-      <input type="hidden" name="contact" value="contact" />
-      <div className="field half first">
-        <label htmlFor="name">Name</label>
-        <input type="text" name="name" id="name" />
-      </div>
-      ...
-    </form>
-  `}
-  dark={false}
-  showNumbers={false}
-  steps={[
-    { notes: "Open `Contact.js` in your favorite IDE" },
-    { range: [2, 3], notes: "Find the <form> element" },
-    { lines: [4], notes: "Add a name to differentiate this form" },
-    { lines: [5], notes: "Hook this form up to Netlify Forms" },
-    {
-      lines: [6],
-      notes: "Let Netlify help filter spam without showing captcha to users"
-    },
-    {
-      lines: [8],
-      notes: "Add hidden input field with the form name"
-    }
-  ]}
-/>
+<div style={{"line-height": "1.5"}}>
+  <CodeSurfer
+    theme={nightOwl}
+    lang="html"
+    code={`
+      <form 
+        method="post"
+        name="contact"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="contact" value="contact" />
+        <div className="field half first">
+          <label htmlFor="name">Name</label>
+          <input type="text" name="name" id="name" />
+        </div>
+        ...
+      </form>
+    `}
+    dark={false}
+    showNumbers={false}
+    steps={[
+      { notes: "Open `Contact.js` in your favorite IDE" },
+      { range: [2, 3], notes: "Find the <form> element" },
+      { lines: [4], notes: "Add a name to differentiate this form" },
+      { lines: [5], notes: "Hook this form up to Netlify" },
+      {
+        lines: [6],
+        notes: "Let Netlify help filter spam without showing captcha to users"
+      },
+      {
+        lines: [8],
+        notes: "Add a hidden input field with the form name"
+      }
+    ]}
+  />
+</div>
 
 <Notes>
   <p>If you’re using a static site generator like Gatsby or React-Static, or tools like react-snapshot that generate a static snapshot of your site, the build tool will generate the static HTML form automatically for you.</p>
@@ -683,14 +689,13 @@ Submit an entry:<br/>
 <ul>
   <li>Visit the Forms dashboard to check entries</li>
   <li>
-    Set up a{" "}
+    Set up form notifications with Netlify or a {" "}
     <a
       href="https://zapier.com/app/editor/55819025/nodes/55819025/action"
       target="_blank"
     >
       Zapier integration
     </a>{" "}
-    to receive form entry notifications
   </li>
 </ul>
 
@@ -709,4 +714,117 @@ Submit an entry:<br/>
     To add even more functionality, we can set up email notifications for when a
     user submits your form
   </p>
+</Notes>
+
+---
+
+export default LayoutDark;
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: `
+      <video
+        style="max-width: 100%"
+        controls
+        muted
+        src='./videos/fill-out-form.mov'
+      />
+    `,
+  }}
+/>
+
+<Notes>
+  <p>Let's visit the site that we deployed on Netlify</p>
+  <p>And now we're going to try filling out our form</p>
+</Notes>
+
+---
+
+export default LayoutDark;
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: `
+      <video
+        style="max-width: 100%"
+        controls
+        muted
+        src='./videos/check-form-submission.mov'
+      />
+    `,
+  }}
+/>
+
+<Notes>
+  <p>To make sure we captured the form entry, we can visit our Netlify dashboard</p>
+  <p>Click into the site and then go to "Forms"</p>
+  <p>We can see our entry!</p>
+  <p>If this site had been live for a while, we could also check out any spam entries that Netlify filtered out for us</p>
+</Notes>
+
+---
+
+export default LayoutDark;
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: `
+      <video
+        style="max-width: 100%"
+        controls
+        muted
+        src='./videos/check-form-submission.mov'
+      />
+    `,
+  }}
+/>
+
+<Notes>
+  <p>To make sure we captured the form entry, we can visit our Netlify dashboard</p>
+  <p>Click into the site and then go to "Forms"</p>
+  <p>We can see our entry!</p>
+  <p>If this site had been live for a while, we could also check out any spam entries that Netlify filtered out for us</p>
+</Notes>
+
+---
+
+export default Layout;
+
+# The <span className="highlight">JAM</span>stack difference
+
+<ul>
+  <Appear>
+    <li>⚡️ Blazing fast performance</li>
+    <li>🤑 Cheaper + easier scaling</li>
+    <li>🚨 Fewer security risks</li>
+    <li>👩🏻‍💻 Better developer experience</li>
+    <li>✨ Give front end developers superpowers</li>
+  </Appear>
+</ul>
+
+---
+
+export default Layout;
+
+# Want more <span className="highlight">JAM</span>?
+
+<ul>
+  <Appear>
+    <li>📕 netlify.com/oreilly-jamstack</li>
+    <li>👩🏿‍🍳 jamstack.org</li>
+    <li>⚡️ staticgen.com</li>
+    <li>💻 JAMstack Conf</li>
+    <li>🇳🇬 community.netlify.com</li>
+    <li>🐦 @lesliecdubs</li>
+  </Appear>
+</ul>
+
+<Notes>
+  <p>eBook available for free, "Modern Web Development on the JAMstack" - by Mathias Biilmann and Phil Hawksworth (thanks!)</p>
+  <p>jamstack.org - best practices, examples, resources, links to community meetups (including Lagos!)</p>
+  <p>staticgen.com - a list of SSGs for JAMstack sites, filterable by GitHub stars</p>
+  <p>JAMstack Conf on YouTube - watch videos from past conferences on JAMstack topics</p>
+  <p>community - join us if you have any questions about Netlify or want to see what other people are building</p>
+  <p>@lesliecdubs - I Tweet about JAMstack + frontend</p>
+  <p>Ask for Q&A</p>
 </Notes>

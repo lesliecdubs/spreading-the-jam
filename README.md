@@ -1,4 +1,4 @@
-# Talk: Spreading the JAM
+# Spreading the JAM: Getting started with the JAMstack using Gatsby and Netlify Forms
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/5932f3fc-4c0a-4ec0-a80e-d347a85334d1/deploy-status)](https://app.netlify.com/sites/spread-the-jam/deploys)
 
